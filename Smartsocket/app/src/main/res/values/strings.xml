@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Smartsocket</string>
+    <string name="name">name</string>
+    <string name="timing">定時</string>
+    <string name="time_set">定時: %1$d:%2$d - %3$d:%4$d</string>
+    <string name="plus">+</string>
+    <string name="input_name">input name</string>
+    <string name="ok">Ok</string>
+    <string name="delete">Delete</string>
+</resources>
