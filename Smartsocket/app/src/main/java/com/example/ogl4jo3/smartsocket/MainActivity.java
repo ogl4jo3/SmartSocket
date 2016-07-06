@@ -62,19 +62,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // 取得被點選之商品資料
         Smartsocket tmp = (Smartsocket) parent.getItemAtPosition(position);
         // 取出商品名稱, 價格
-        String msg = "您選的是:" + tmp.getName() + ",定時 " + tmp.getstarttime_hour()
-                + tmp.getstarttime_minute() + tmp.getendtime_hour() + tmp.getendtime_minute();
+        String msg = "您選的是:" + tmp.getName() + ",定時 " + tmp.gethour()
+                + tmp.getminute() ;
         // Toast 顯示
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         Bundle extras = new Bundle();
         extras.putInt("new_edit", 1);   //new=0 , edit=1 , delete=2
         extras.putInt("position", position);
         extras.putString("name", tmp.getName());
-        extras.putInt("starttime_hour", tmp.getstarttime_hour());
-        extras.putInt("starttime_minute", tmp.getstarttime_minute());
-        extras.putInt("endtime_hour", tmp.getendtime_hour());
-        extras.putInt("endtime_minute", tmp.getendtime_minute());
-        //extras.putInt("imageId",tmp.getImageId());
+        extras.putInt("hour", tmp.gethour());
+        extras.putInt("minute", tmp.getminute());
         Intent intent = new Intent(this, NeweditActivity.class);
         intent.putExtras(extras);
         startActivityForResult(intent, 1);
@@ -114,20 +111,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             String name = data.getStringExtra("name");
             int new_edit = data.getIntExtra("new_edit", 0);
             int position = data.getIntExtra("position", 0);
-            int starttime_hour = data.getIntExtra("starttime_hour", 0);
-            int starttime_minute = data.getIntExtra("starttime_minute", 0);
-            int endtime_hour = data.getIntExtra("endtime_hour", 0);
-            int endtime_minute = data.getIntExtra("endtime_minute", 0);
+            int hour = data.getIntExtra("hour", 0);
+            int minute = data.getIntExtra("minute", 0);
             Toast.makeText(this, name + "intent success" + new_edit, Toast.LENGTH_SHORT).show();
 
             //new=0 , edit=1 , delete=2
             if (new_edit == 0) {
-                Smartsocket tmp = new Smartsocket(name, 7, 30, 8, 40);
+                Smartsocket tmp = new Smartsocket(name, 1, 00);
                 listItem.add(tmp);
             } else if (new_edit == 1) {
-                //int imageId=data.getIntExtra("imageId",0);
-                Smartsocket edittmp = new Smartsocket(name, starttime_hour, starttime_minute,
-                        endtime_hour, endtime_minute);
+                Smartsocket edittmp = new Smartsocket(name, hour, minute);
                 listItem.set(position, edittmp);
             } else if (new_edit == 2) {
                 listItem.remove(position);

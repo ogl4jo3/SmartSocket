@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,6 +18,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -39,8 +41,10 @@ public class NeweditActivity extends Activity implements View.OnClickListener {
     int new_edit;
     int position;
     String name;
-    int starttime_hour, starttime_minute, endtime_hour, endtime_minute;
-    //int imageId;
+    int hour, minute;
+
+    com.example.ogl4jo3.smartsocket.PickerView minute_pv;
+    com.example.ogl4jo3.smartsocket.PickerView second_pv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +59,41 @@ public class NeweditActivity extends Activity implements View.OnClickListener {
         client = new OkHttpClient();
         getjson();
 
-        idspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        //timepicker
+        minute_pv = (com.example.ogl4jo3.smartsocket.PickerView) findViewById(R.id.minute_pv);
+        second_pv = (com.example.ogl4jo3.smartsocket.PickerView) findViewById(R.id.second_pv);
+        List<String> minutes = new ArrayList<String>();
+        List<String> seconds = new ArrayList<String>();
+        for (int i = 0; i < 12; i++) {
+            minutes.add(i < 10 ? "0" + i : "" + i);
+        }
+        for (int i = 0; i < 60; i+=15) {
+            seconds.add(i < 10 ? "0" + i : "" + i);
+        }
+        minute_pv.setData(minutes);
+        minute_pv.setOnSelectListener(new PickerView.onSelectListener() {
+
+            @Override
+            public void onSelect(String text) {
+                hour=Integer.parseInt(text);
+                Toast.makeText(NeweditActivity.this, "選擇了 " + text + " 小時", Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
+        second_pv.setData(seconds);
+        second_pv.setOnSelectListener(new PickerView.onSelectListener() {
+
+            @Override
+            public void onSelect(String text) {
+                minute=Integer.parseInt(text);
+                Toast.makeText(NeweditActivity.this, "選擇了 " + text + " 分鐘", Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
+
+
+
+    idspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String str = parent.getItemAtPosition(position).toString();
@@ -70,11 +108,10 @@ public class NeweditActivity extends Activity implements View.OnClickListener {
 
         Bundle extras = getIntent().getExtras();
         name = extras.getString("name");
-        starttime_hour = extras.getInt("starttime_hour");
-        starttime_minute = extras.getInt("starttime_minute");
-        endtime_hour = extras.getInt("endtime_hour");
-        endtime_minute = extras.getInt("endtime_minute");
-        //imageId=extras.getInt("imageId");
+        //hour = extras.getInt("hour");
+        //minute = extras.getInt("minute");
+        hour = 1;
+        minute = 0;
         new_edit = extras.getInt("new_edit");   //new=0 , edit=1 , delete=2
         position = extras.getInt("position");
         nameEditText.setText(name);
@@ -94,11 +131,8 @@ public class NeweditActivity extends Activity implements View.OnClickListener {
             if (nameEditText.length() != 0) {
                 Intent intent = new Intent();
                 intent.putExtra("name", nameEditText.getText().toString());
-                intent.putExtra("starttime_hour", starttime_hour);
-                intent.putExtra("starttime_minute", starttime_minute);
-                intent.putExtra("endtime_hour", endtime_hour);
-                intent.putExtra("endtime_minute", endtime_minute);
-                //intent.putExtra("imageId", imageId);
+                intent.putExtra("hour", hour);
+                intent.putExtra("minute", minute);
                 intent.putExtra("new_edit", new_edit);   //new=0 , edit=1 , delete=2
                 intent.putExtra("position", position);
                 setResult(1, intent);

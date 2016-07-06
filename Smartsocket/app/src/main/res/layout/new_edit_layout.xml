@@ -39,9 +39,49 @@
             android:text="@string/ok" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="定時:"
+            android:layout_marginTop="44dp"
+            android:textSize="@dimen/nameEditText_textsize"/>
+        <com.example.ogl4jo3.smartsocket.PickerView
+            android:id="@+id/minute_pv"
+            android:layout_width="80dp"
+            android:layout_height="160dp"/>
+
+        <TextView
+            android:id="@+id/minute_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="小時"
+            android:textColor="#ffaa33"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
+
+        <com.example.ogl4jo3.smartsocket.PickerView
+            android:id="@+id/second_pv"
+            android:layout_width="80dp"
+            android:layout_height="160dp"/>
+
+        <TextView
+            android:id="@+id/second_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="分鐘"
+            android:textColor="#ffaa33"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
     <Button
         android:id="@+id/parsebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="parse" />
+        android:text="@string/parse" />
 </LinearLayout>

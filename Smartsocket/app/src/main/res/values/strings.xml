@@ -7,4 +7,5 @@
     <string name="input_name">input name</string>
     <string name="ok">Ok</string>
     <string name="delete">Delete</string>
+    <string name="parse">搜尋已存在裝置</string>
 </resources>

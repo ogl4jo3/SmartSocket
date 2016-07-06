@@ -1,104 +1,104 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/rowlayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="4">
+<LinearLayout android:id="@+id/rowlayout"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_weight="4">
 
 
-    <!--<ImageView-->
-    <!--android:id="@+id/image"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignParentRight="true"-->
-    <!--android:layout_alignParentTop="true"-->
-    <!--android:src="@drawable/empty" />-->
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="3"
+		android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="3"
-        android:orientation="vertical">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginTop="@dimen/listview_margin">
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/listview_margin"
-            android:layout_marginTop="@dimen/listview_margin"
-            android:text="@string/name"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+			<TextView
+				android:id="@+id/name"
+				android:layout_width="120dp"
+				android:layout_height="wrap_content"
+				android:maxLength="8"
+				android:layout_marginLeft="@dimen/listview_margin"
+				android:text="@string/name"
+				android:textAppearance="?android:attr/textAppearanceLarge"/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="@dimen/listview_margin"
+				android:gravity="right"
+				android:layout_weight="5"
+				android:text="開關"
+				android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/listview_margin"
-            android:layout_marginLeft="@dimen/timingTextview_Lmargin"
-            android:layout_marginTop="@dimen/timingTextview_Tmargin">
+			<android.support.v7.widget.SwitchCompat
+				android:id="@+id/onoffButton"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="@dimen/listview_margin"
+				android:layout_weight="1"
+				android:focusable="false"/>
+		</LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/timing"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginBottom="@dimen/listview_margin"
+			android:layout_marginLeft="@dimen/timingTextview_Lmargin"
+			android:layout_marginTop="@dimen/timingTextview_Tmargin">
 
-            <TextView
-                android:id="@+id/starttime_hour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/timeTextview_margin"
-                android:text="@string/name"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/timing"
+				android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+			<TextView
+				android:id="@+id/hour"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="@dimen/timeTextview_margin"
+				android:text="hour"
+				android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-            <TextView
-                android:id="@+id/starttime_minute"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/name"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/timeTextview_margin"
-                android:text="-"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-            <TextView
-            android:id="@+id/endtime_hour"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/timeTextview_margin"
-            android:text="@string/name"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="小時"
+				android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+			<TextView
+				android:id="@+id/minute"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="minute"
+				android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-            <TextView
-                android:id="@+id/endtime_minute"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/name"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </LinearLayout>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="分鐘"
+				android:textAppearance="?android:attr/textAppearanceMedium"/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="right"
+				android:layout_weight="5"
+				android:text="定時開關"
+				android:textAppearance="?android:attr/textAppearanceMedium"/>
+			<android.support.v7.widget.SwitchCompat
+				android:id="@+id/timeButton"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="@dimen/listview_margin"
+				android:layout_weight="1"
+				android:focusable="false"/>
+		</LinearLayout>
 
-    </LinearLayout>
+	</LinearLayout>
 
-    <android.support.v7.widget.SwitchCompat
-        android:id="@+id/onoffButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginRight="@dimen/listview_margin"
-        android:layout_weight="1"
-        android:focusable="false"/>
 
 </LinearLayout>
