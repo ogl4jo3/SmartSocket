@@ -9,5 +9,5 @@
     <dimen name="timingTextview_Tmargin">10dp</dimen>
     <dimen name="timeTextview_margin">10dp</dimen>
     <dimen name="onoffButton_margin">100dp</dimen>
-    <dimen name="okButton_margin">20dp</dimen>
+    <dimen name="okButton_margin">50dp</dimen>
 </resources>

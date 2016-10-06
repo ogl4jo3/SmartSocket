@@ -156,6 +156,9 @@ public class PickerView extends View {
 	}
 
 	private void drawData(Canvas canvas) {
+		if (mDataList == null || mDataList.size() == 0) {
+			return;
+		}
 		// 先绘制选中的text再往上往下绘制其余的text
 		float scale = parabola(mViewHeight / 4.0f, mMoveLen);
 		float size = (mMaxTextSize - mMinTextSize) * scale + mMinTextSize;

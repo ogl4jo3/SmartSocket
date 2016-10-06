@@ -12,28 +12,27 @@
         android:layout_marginRight="@dimen/nameEditText_margin"
         android:layout_marginTop="@dimen/nameEditText_margin"
         android:hint="@string/input_name"
+        android:maxLength="8"
         android:textSize="@dimen/nameEditText_textsize" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginRight="@dimen/okButton_margin">
-
+        android:layout_marginLeft="10dp">
+        <Button
+            android:id="@+id/parsebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parse" />
         <Spinner
             android:id="@+id/idspinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/deleteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/okButton_margin"
-            android:text="@string/delete" />
 
         <Button
             android:id="@+id/okButton"
+            android:layout_marginLeft="@dimen/okButton_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ok" />
@@ -79,9 +78,10 @@
             android:textSize="26sp"
             android:textStyle="bold"/>
     </LinearLayout>
+
     <Button
-        android:id="@+id/parsebutton"
-        android:layout_width="wrap_content"
+        android:id="@+id/deleteButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/parse" />
+        android:text="@string/delete" />
 </LinearLayout>
