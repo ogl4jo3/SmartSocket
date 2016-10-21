@@ -3,10 +3,11 @@
     <string name="name">name</string>
     <string name="device_id">id</string>
     <string name="timing">定時</string>
-    <string name="time_set">定時: %1$d:%2$d - %3$d:%4$d</string>
+    <string name="time_set">定時: %1$d:%2$d - %3$d:%4$d </string>
     <string name="plus">+</string>
     <string name="input_name">input name</string>
     <string name="ok">Ok</string>
     <string name="delete">刪除此裝置</string>
     <string name="parse">搜尋已存在裝置id</string>
+    <string name="remove_alarm">Remove Alarm</string>
 </resources>
