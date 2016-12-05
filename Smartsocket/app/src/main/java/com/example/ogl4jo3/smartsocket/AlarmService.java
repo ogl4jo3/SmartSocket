@@ -39,13 +39,10 @@ public class AlarmService extends Service {
 
 		client = new OkHttpClient();
 
-		// 抓取報價
 		new Thread() {
 
 			@Override
 			public void run() {
-				//StockService stockService = new StockService();
-				//Stock stock = stockService.getStock(stockNo);
 
 				// 建立 Notification
 				int nid = 1;
@@ -94,13 +91,6 @@ public class AlarmService extends Service {
 
 				final String body = response.body().string();
 				Log.d(TAG, body);
-				/*runOnUiThread(new Runnable() {
-
-					@Override
-					public void run() {
-						//gettextview.setText(body);
-					}
-				});*/
 			}
 		});
 	}

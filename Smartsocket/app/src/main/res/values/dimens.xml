@@ -1,13 +1,13 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="nameEditText_margin">16dp</dimen>
-    <dimen name="nameEditText_textsize">50sp</dimen>
-    <dimen name="listview_margin">16dp</dimen>
-    <dimen name="timingTextview_Lmargin">20dp</dimen>
-    <dimen name="timingTextview_Tmargin">10dp</dimen>
-    <dimen name="timeTextview_margin">10dp</dimen>
-    <dimen name="onoffButton_margin">100dp</dimen>
-    <dimen name="okButton_margin">50dp</dimen>
+	<!-- Default screen margins, per the Android Design guidelines. -->
+	<dimen name="activity_horizontal_margin">16dp</dimen>
+	<dimen name="activity_vertical_margin">16dp</dimen>
+	<dimen name="nameEditText_margin">16dp</dimen>
+	<dimen name="nameEditText_textsize">50sp</dimen>
+	<dimen name="listview_margin">16dp</dimen>
+	<dimen name="timingTextview_Lmargin">20dp</dimen>
+	<dimen name="timingTextview_Tmargin">10dp</dimen>
+	<dimen name="timeTextview_margin">10dp</dimen>
+	<dimen name="onoffButton_margin">100dp</dimen>
+	<dimen name="okButton_margin">50dp</dimen>
 </resources>

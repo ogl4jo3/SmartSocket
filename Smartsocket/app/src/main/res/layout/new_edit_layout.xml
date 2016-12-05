@@ -1,87 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/nameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/nameEditText_margin"
-        android:layout_marginRight="@dimen/nameEditText_margin"
-        android:layout_marginTop="@dimen/nameEditText_margin"
-        android:hint="@string/input_name"
-        android:maxLength="8"
-        android:textSize="@dimen/nameEditText_textsize" />
+<EditText
+	android:id="@+id/nameEditText"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginLeft="@dimen/nameEditText_margin"
+	android:layout_marginRight="@dimen/nameEditText_margin"
+	android:layout_marginTop="@dimen/nameEditText_margin"
+	android:hint="@string/input_name"
+	android:maxLength="8"
+	android:textSize="@dimen/nameEditText_textsize"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp">
-        <Button
-            android:id="@+id/parsebutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/parse" />
-        <Spinner
-            android:id="@+id/idspinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+<LinearLayout
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginLeft="10dp">
 
+	<Button
+		android:id="@+id/parsebutton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/parse"/>
 
-        <Button
-            android:id="@+id/okButton"
-            android:layout_marginLeft="@dimen/okButton_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ok" />
-    </LinearLayout>
+	<Spinner
+		android:id="@+id/idspinner"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="定時:"
-            android:layout_marginTop="44dp"
-            android:textSize="@dimen/nameEditText_textsize"/>
-        <com.example.ogl4jo3.smartsocket.PickerView
-            android:id="@+id/minute_pv"
-            android:layout_width="80dp"
-            android:layout_height="160dp"/>
+	<Button
+		android:id="@+id/okButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="@dimen/okButton_margin"
+		android:text="@string/ok"/>
+</LinearLayout>
 
-        <TextView
-            android:id="@+id/minute_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="小時"
-            android:textColor="#ffaa33"
-            android:textSize="26sp"
-            android:textStyle="bold"/>
+<LinearLayout
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal">
 
-        <com.example.ogl4jo3.smartsocket.PickerView
-            android:id="@+id/second_pv"
-            android:layout_width="80dp"
-            android:layout_height="160dp"/>
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginTop="44dp"
+		android:text="定時:"
+		android:textSize="@dimen/nameEditText_textsize"/>
 
-        <TextView
-            android:id="@+id/second_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="分鐘"
-            android:textColor="#ffaa33"
-            android:textSize="26sp"
-            android:textStyle="bold"/>
-    </LinearLayout>
+	<com.example.ogl4jo3.smartsocket.PickerView
+		android:id="@+id/minute_pv"
+		android:layout_width="80dp"
+		android:layout_height="160dp"/>
 
-    <Button
-        android:id="@+id/deleteButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/delete" />
+	<TextView
+		android:id="@+id/minute_tv"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="40dp"
+		android:text="小時"
+		android:textColor="#ffaa33"
+		android:textSize="26sp"
+		android:textStyle="bold"/>
+
+	<com.example.ogl4jo3.smartsocket.PickerView
+		android:id="@+id/second_pv"
+		android:layout_width="80dp"
+		android:layout_height="160dp"/>
+
+	<TextView
+		android:id="@+id/second_tv"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="40dp"
+		android:text="分鐘"
+		android:textColor="#ffaa33"
+		android:textSize="26sp"
+		android:textStyle="bold"/>
+</LinearLayout>
+
+<Button
+	android:id="@+id/deleteButton"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/delete"/>
+
 </LinearLayout>

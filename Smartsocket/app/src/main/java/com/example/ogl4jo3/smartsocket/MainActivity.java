@@ -29,12 +29,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		setContentView(R.layout.activity_main);
 
 		listView = (ListView) findViewById(R.id.listView);
-		// Step 1 :定義商品資 料 for JavaBean
-	    /*Smartsocket hamburger = new Smartsocket("Hamburger", 7, 30, 8, 30);
-        index++;
-        Smartsocket french = new Smartsocket("French fries", 11, 40, 15, 50);
-        index++;
-        Smartsocket coca = new Smartsocket("Coca Cola", 21, 25, 23, 0);*/
 		listItem = new Gson().fromJson(Memory.getString(this, "ListItem", null),
 				new TypeToken<ArrayList<Smartsocket>>() {
 
@@ -43,27 +37,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			listItem = new ArrayList<>();
 		}
 
-		// Step 2 :將商品放入到List集合容器中
-        /*listItem.add(hamburger);
-        listItem.add(french);
-        listItem.add(coca);*/
-
-		// Step 3 :建立 FastfoodAdapter 適配器
 		adapter = new SmartsocketAdapter(this, listItem);
-
-		// Step 4 :設定適配器
 		listView.setAdapter(adapter);
-
-		// Step 5 :註冊 OnItemClickListener
 		listView.setOnItemClickListener(this);
 	}
 
-	// 列表項目點選之事件處理
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		// 取得被點選之商品資料
 		Smartsocket tmp = (Smartsocket) parent.getItemAtPosition(position);
-		// 取出商品名稱, 價格
 		String msg =
 				"您選的是:" + tmp.getName() + ", id: " + tmp.getDevice_id() + ", 定時 " + tmp.gethour() +
 						tmp.getminute();

@@ -8,97 +8,99 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+
 import com.google.gson.Gson;
 
 public class Memory {
-    private static SharedPreferences appSharedPrefs;
-    private static SharedPreferences.Editor prefsEditor;
 
-    @SuppressLint("CommitPrefEdits")
-    public static void init(Context context) {
-        appSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        prefsEditor = appSharedPrefs.edit();
-    }
+	private static SharedPreferences appSharedPrefs;
+	private static SharedPreferences.Editor prefsEditor;
 
-    public static int getInt(Context context, String key, int defValue) {
-        init(context);
+	@SuppressLint("CommitPrefEdits")
+	public static void init(Context context) {
+		appSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+		prefsEditor = appSharedPrefs.edit();
+	}
 
-        return appSharedPrefs.getInt(key, defValue);
-    }
+	public static int getInt(Context context, String key, int defValue) {
+		init(context);
 
-    public static void setInt(Context context, String key, int value) {
-        init(context);
+		return appSharedPrefs.getInt(key, defValue);
+	}
 
-        prefsEditor.putInt(key, value);
-        prefsEditor.commit();
-    }
+	public static void setInt(Context context, String key, int value) {
+		init(context);
 
-    public static long getLong(Context context, String key, long defValue) {
-        init(context);
+		prefsEditor.putInt(key, value);
+		prefsEditor.commit();
+	}
 
-        return appSharedPrefs.getLong(key, defValue);
-    }
+	public static long getLong(Context context, String key, long defValue) {
+		init(context);
 
-    public static void setLong(Context context, String key, long value) {
-        init(context);
+		return appSharedPrefs.getLong(key, defValue);
+	}
 
-        prefsEditor.putLong(key, value);
-        prefsEditor.commit();
-    }
+	public static void setLong(Context context, String key, long value) {
+		init(context);
 
-    public static float getFloat(Context context, String key, float defValue) {
-        init(context);
+		prefsEditor.putLong(key, value);
+		prefsEditor.commit();
+	}
 
-        return appSharedPrefs.getFloat(key, defValue);
-    }
+	public static float getFloat(Context context, String key, float defValue) {
+		init(context);
 
-    public static void setFloat(Context context, String key, float value) {
-        init(context);
+		return appSharedPrefs.getFloat(key, defValue);
+	}
 
-        prefsEditor.putFloat(key, value);
-        prefsEditor.commit();
-    }
+	public static void setFloat(Context context, String key, float value) {
+		init(context);
 
-    public static String getString(Context context, String key, String defValue) {
-        init(context);
+		prefsEditor.putFloat(key, value);
+		prefsEditor.commit();
+	}
 
-        return appSharedPrefs.getString(key, defValue);
-    }
+	public static String getString(Context context, String key, String defValue) {
+		init(context);
 
-    public static void setString(Context context, String key, String data) {
-        init(context);
+		return appSharedPrefs.getString(key, defValue);
+	}
 
-        prefsEditor.putString(key, data);
-        prefsEditor.commit();
-    }
+	public static void setString(Context context, String key, String data) {
+		init(context);
 
-    public static boolean getBoolean(Context context, String key, boolean defValue) {
-        init(context);
+		prefsEditor.putString(key, data);
+		prefsEditor.commit();
+	}
 
-        return appSharedPrefs.getBoolean(key, defValue);
-    }
+	public static boolean getBoolean(Context context, String key, boolean defValue) {
+		init(context);
 
-    public static void setBoolean(Context context, String key, boolean data) {
-        init(context);
+		return appSharedPrefs.getBoolean(key, defValue);
+	}
 
-        prefsEditor.putBoolean(key, data);
-        prefsEditor.commit();
-    }
+	public static void setBoolean(Context context, String key, boolean data) {
+		init(context);
 
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    public static Object getObject(Context context, String key, Class cls) {
-        init(context);
+		prefsEditor.putBoolean(key, data);
+		prefsEditor.commit();
+	}
 
-        String json = appSharedPrefs.getString(key, null);
+	@SuppressWarnings({"unchecked", "rawtypes"})
+	public static Object getObject(Context context, String key, Class cls) {
+		init(context);
 
-        return new Gson().fromJson(json, cls);
-    }
+		String json = appSharedPrefs.getString(key, null);
 
-    public static void setObject(Context context, String key, Object data) {
-        init(context);
+		return new Gson().fromJson(json, cls);
+	}
 
-        String json = new Gson().toJson(data);
-        prefsEditor.putString(key, json);
-        prefsEditor.commit();
-    }
+	public static void setObject(Context context, String key, Object data) {
+		init(context);
+
+		String json = new Gson().toJson(data);
+		prefsEditor.putString(key, json);
+		prefsEditor.commit();
+	}
 }

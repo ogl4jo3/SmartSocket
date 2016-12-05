@@ -131,11 +131,9 @@ public class NeweditActivity extends Activity implements View.OnClickListener {
 	@Override
 	public void onClick(View v) {
 		if (v == okButton) {
-			if((nameEditText.length() == 0) || (device_id == null))
-			{
+			if ((nameEditText.length() == 0) || (device_id == null)) {
 				Toast.makeText(NeweditActivity.this, "請輸入裝置名稱並選擇裝置id", Toast.LENGTH_LONG).show();
-			}
-			else  {
+			} else {
 				Intent intent = new Intent();
 				intent.putExtra("name", nameEditText.getText().toString());
 				intent.putExtra("device_id", device_id);
